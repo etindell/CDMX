@@ -19,246 +19,308 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header Section -->
-    <header class="bg-cover bg-center text-white shadow-lg" style="background-image: url('images/header-bg.jpg');">
-        <div class="bg-black bg-opacity-50 p-8 md:p-16">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-2">Linnea, Sorenne & Marie's</h1>
-                <h2 class="text-5xl md:text-7xl font-bold">Mexico City Adventure</h2>
-                <p class="mt-4 text-lg md:text-xl">A Family Itinerary: Pyramids, Spooky Dolls, Tacos & Rock Climbing!</p>
-            </div>
+    <!-- Password Overlay -->
+    <div id="password-overlay" class="fixed inset-0 bg-gray-900 bg-opacity-95 flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg shadow-2xl text-center w-11/12 max-w-sm">
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">Enter Password</h3>
+            <p class="text-gray-600 mb-6">Please enter the password to view the itinerary.</p>
+            <form id="password-form">
+                <input type="password" id="password-input" class="w-full px-4 py-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Password">
+                <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded-lg hover:bg-teal-700 transition-colors">Enter</button>
+            </form>
+            <p id="error-message" class="text-red-500 mt-4 h-5"></p>
         </div>
-    </header>
+    </div>
 
-    <!-- Main Content -->
-    <main class="max-w-4xl mx-auto p-4 md:p-8">
-
-        <!-- Day 1: Monday 11 Aug -->
-        <section class="mb-12">
-            <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Mon 11 Aug – Welcome to Condesa</h3>
-            <div class="space-y-6">
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                    <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d15052.797232185248!2d-99.1868345300903!3d19.42595289914755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f8d388f7b5cb%3A0x6a0243468048696e!2sParque+M%C3%A9xico!3m2!1d19.413212!2d-99.170425!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!5e0!3m2!1sen!2sus!4v1657824135521!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 1 Activities"></iframe>
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Morning / Early Afternoon: Arrival & Parque México</h4>
-                    <p>Arrive, unpack, and let the girls stretch their legs on leafy Parque México, with its two playgrounds and charming duck pond. A perfect, gentle start as all museums are closed today.</p>
-                    <div class="w-full aspect-video mt-4 rounded-lg shadow-md overflow-hidden">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/zjTYjPoJHJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Late Afternoon: Roma–Condesa Food Stroll</h4>
-                    <p>Embark on a self-guided food tour! Let Marie practice her Spanish ordering churros at El Moro and fruit paletas at La Michoacana.</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                        <img src="images/churros.jpg" alt="Churros with chocolate dipping sauce" class="rounded-lg shadow-md h-48 w-full object-cover">
-                        <img src="images/paletas.jpg" alt="Colorful fruit paletas (ice pops)" class="rounded-lg shadow-md h-48 w-full object-cover">
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Dinner: La Pitahaya Vegana</h4>
-                    <p>For dinner, head to the beautiful La Pitahaya Vegana in Roma Norte for their famous, vibrant pink tacos and other creative plant-based dishes.</p>
-                    <img src="images/la-pitahaya-vegana.jpg" alt="Vibrant pink tacos on a plate at La Pitahaya Vegana" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                </article>
+    <!-- Main Site Content (Initially Hidden) -->
+    <div id="site-content" class="hidden">
+        <!-- Header Section -->
+        <header class="bg-cover bg-center text-white shadow-lg" style="background-image: url('images/header-bg.jpg');">
+            <div class="bg-black bg-opacity-50 p-8 md:p-16">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-2">Linnea, Sorenne & Marie's</h1>
+                    <h2 class="text-5xl md:text-7xl font-bold">Mexico City Adventure</h2>
+                    <p class="mt-4 text-lg md:text-xl">A Family Itinerary: Pyramids, Spooky Dolls, Tacos & Rock Climbing!</p>
+                </div>
             </div>
-        </section>
+        </header>
 
-        <!-- Day 2: Tuesday 12 Aug -->
-        <section class="mb-12">
-            <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Tue 12 Aug – Chapultepec & Anthropology</h3>
-            <div class="space-y-6">
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                    <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d7526.494433149818!2d-99.1884508221528!3d19.4256667389856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f8d2b784f47b%3A0x73f7d853137373e7!2sMuseo+Nacional+de+Antropolog%C3%ADa!3m2!1d19.425986!2d-99.18633!5e0!3m2!1sen!2sus!4v1657824333303!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 2 Activities"></iframe>
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">09:00 – 13:00: Museo Nacional de Antropología</h4>
-                    <p>Explore one of the world's great museums. Focus on the breathtaking Aztec and Maya halls. Sorenne will love the giant, mysterious stone carvings!</p>
-                    <div class="w-full aspect-video mt-4 rounded-lg shadow-md overflow-hidden">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/vg65j8d1Zzw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Lunch & Afternoon: Chapultepec Park</h4>
-                    <p>Enjoy a picnic lunch on Chapultepec Lake, followed by a row-boat rental for Linnea and a walk through the vast Bosque de Chapultepec.</p>
-                    <img src="images/chapultepec-park.jpg" alt="Row boats on the lake in Chapultepec Park with the castle in the background" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                </article>
-            </div>
-        </section>
+        <!-- Main Content -->
+        <main class="max-w-4xl mx-auto p-4 md:p-8">
 
-        <!-- Day 3: Wednesday 13 Aug -->
-        <section class="mb-12">
-            <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Wed 13 Aug – Hot-Air Balloon & First Ruins</h3>
-            <div class="space-y-6">
-                 <article>
-                    <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                    <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d120286.1720492862!2d-99.17411964179687!3d19.56066299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1eaf53b1b649d%3A0x1a45f2845318684!2sTeotihuac%C3%A1n!3m2!1d19.692459!2d-98.843603!4m5!1s0x85d1f8acb4831ceb%3A0x1a603ed75f463c6b!2sArena+M%C3%A9xico!3m2!1d19.425026!2d-99.152431!5e0!3m2!1sen!2sus!4v1657824483606!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 3 Activities"></iframe>
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">04:30 – 13:30: Teotihuacán from Above & Below</h4>
-                    <p>An early hotel pick-up for a breathtaking balloon flight over Teotihuacán at sunrise. After breakfast, walk the ancient Avenue of the Dead and tell Sorenne about the legends of the giant pyramids.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                         <img src="images/hot-air-balloons.jpg" alt="Hot air balloons flying over the Teotihuacan pyramids at sunrise" class="rounded-lg shadow-md h-72 w-full object-cover">
-                         <img src="images/teotihuacan-pyramid.jpg" alt="The Pyramid of the Sun at Teotihuacan" class="rounded-lg shadow-md h-72 w-full object-cover">
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Evening (Optional): Lucha Libre</h4>
-                    <p>Experience the spectacle of a Lucha Libre family show at Arena México. Sorenne will love the spooky masks and heroic wrestlers!</p>
-                    <img src="images/lucha-libre.jpg" alt="Lucha libre wrestlers in the ring" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                </article>
-            </div>
-        </section>
-        
-        <!-- Day 4: Thursday 14 Aug -->
-        <section class="mb-12">
-            <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Thu 14 Aug – Churros & Historic Center</h3>
-            <div class="space-y-6">
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                    <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d30103.01213943403!2d-99.1843196846924!3d19.43260778683226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f934527e79cb%3A0x69680a31604a37c1!2sZ%C3%B3calo!3m2!1d19.432608!2d-99.133208!5e0!3m2!1sen!2sus!4v1657824630591!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 4 Activities"></iframe>
-                    </div>
-                </article>
-                 <article>
-                    <h4 class="font-bold text-xl mb-2">Morning: Churros Master Class</h4>
-                    <p>Time to make everyone's favorite treat! Learn how to make authentic churros from a Mexican pastry chef. Marie can help mix the dough! You can find more details and book here: <a href="https://www.tripadvisor.com/AttractionProductReview-g150800-d26868751-Churros_Master_Class_with_Mexican_Pastry_Chef-Mexico_City_Central_Mexico_and_Gulf_.html" target="_blank" class="text-teal-600 hover:underline">Churros Master Class</a>.</p>
-                    <div class="w-full aspect-video mt-4 rounded-lg shadow-md overflow-hidden">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/e1N386IyQpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Afternoon: Historic Center</h4>
-                    <p>After lunch, take a guided walk of the Zócalo and the Templo Mayor excavations. Tell Sorenne the spooky stories of the ancient Aztec temple that was discovered right in the middle of the city.</p>
-                    <img src="images/zocalo.jpg" alt="The Zocalo, Mexico City's main square, with the Metropolitan Cathedral" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                </article>
-            </div>
-        </section>
+            <!-- Day 1: Monday 11 Aug -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Mon 11 Aug – Welcome to Condesa</h3>
+                <div class="space-y-6">
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
+                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d15052.797232185248!2d-99.1868345300903!3d19.42595289914755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f8d388f7b5cb%3A0x6a0243468048696e!2sParque+M%C3%A9xico!3m2!1d19.413212!2d-99.170425!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!5e0!3m2!1sen!2sus!4v1657824135521!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 1 Activities"></iframe>
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Morning / Early Afternoon: Arrival & Parque México</h4>
+                        <p>Arrive, unpack, and let the girls stretch their legs on leafy Parque México, with its two playgrounds and charming duck pond. A perfect, gentle start as all museums are closed today.</p>
+                        <div class="w-full aspect-video mt-4 rounded-lg shadow-md overflow-hidden">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/zjTYjPoJHJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Late Afternoon: Roma–Condesa Food Stroll</h4>
+                        <p>Embark on a self-guided food tour! Let Marie practice her Spanish ordering churros at El Moro and fruit paletas at La Michoacana.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                            <img src="images/churros.jpg" alt="Churros with chocolate dipping sauce" class="rounded-lg shadow-md h-48 w-full object-cover">
+                            <img src="images/paletas.jpg" alt="Colorful fruit paletas (ice pops)" class="rounded-lg shadow-md h-48 w-full object-cover">
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Dinner: La Pitahaya Vegana</h4>
+                        <p>For dinner, head to the beautiful La Pitahaya Vegana in Roma Norte for their famous, vibrant pink tacos and other creative plant-based dishes.</p>
+                        <img src="images/la-pitahaya-vegana.jpg" alt="Vibrant pink tacos on a plate at La Pitahaya Vegana" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
+                    </article>
+                </div>
+            </section>
 
-        <!-- Day 5: Friday 15 Aug -->
-        <section class="mb-12">
-            <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Fri 15 Aug – Coyoacán's Art & Spooky Canals</h3>
-            <div class="space-y-6">
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                    <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d60241.00281226781!2d-99.19230564179687!3d19.3490059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1ff3761841369%3A0x33b327a13d523455!2sMuseo+Frida+Kahlo!3m2!1d19.355193!2d-99.162294!4m5!1s0x85ce012080415a77%3A0x44d1881775f08611!2sXochimilco!3m2!1d19.25508!2d-99.10228!5e0!3m2!1sen!2sus!4v1657824765481!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 5 Activities"></iframe>
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Morning: Frida Kahlo & Diego Rivera Museums</h4>
-                    <p>Visit the iconic Casa Azul where Frida Kahlo lived, then take a short taxi to the unique, pyramid-like Museo Diego Rivera-Anahuacalli.</p>
-                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                        <img src="images/casa-azul.jpg" alt="The bright blue exterior of the Frida Kahlo Museum (Casa Azul)" class="rounded-lg shadow-md h-72 w-full object-cover">
-                        <img src="images/anahuacalli-museum.jpg" alt="The imposing volcanic stone structure of the Museo Anahuacalli" class="rounded-lg shadow-md h-72 w-full object-cover">
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Afternoon: Xochimilco & The Island of the Dolls</h4>
-                    <p>Hire a colorful trajinera boat to float down the canals of Xochimilco. For Sorenne's love of spooky stories, ask the driver to take you past the eerie Island of the Dolls (Isla de las Muñecas)!</p>
-                    <img src="images/xochimilco-kayak.jpg" alt="Colorful trajinera boat on the canals of Xochimilco" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                </article>
-            </div>
-        </section>
+            <!-- Day 2: Tuesday 12 Aug -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Tue 12 Aug – Chapultepec & Anthropology</h3>
+                <div class="space-y-6">
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
+                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d7526.494433149818!2d-99.1884508221528!3d19.4256667389856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f8d2b784f47b%3A0x73f7d853137373e7!2sMuseo+Nacional+de+Antropolog%C3%ADa!3m2!1d19.425986!2d-99.18633!5e0!3m2!1sen!2sus!4v1657824333303!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 2 Activities"></iframe>
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">09:00 – 13:00: Museo Nacional de Antropología</h4>
+                        <p>Explore one of the world's great museums. Focus on the breathtaking Aztec and Maya halls. Sorenne will love the giant, mysterious stone carvings!</p>
+                        <div class="w-full aspect-video mt-4 rounded-lg shadow-md overflow-hidden">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/vg65j8d1Zzw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Lunch & Afternoon: Chapultepec Park</h4>
+                        <p>Enjoy a picnic lunch on Chapultepec Lake, followed by a row-boat rental for Linnea and a walk through the vast Bosque de Chapultepec.</p>
+                        <img src="images/chapultepec-park.jpg" alt="Row boats on the lake in Chapultepec Park with the castle in the background" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
+                    </article>
+                </div>
+            </section>
 
-        <!-- Day 6: Saturday 16 Aug -->
-        <section class="mb-12">
-            <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Sat 16 Aug – Murals, Tacos & Markets</h3>
-            <div class="space-y-6">
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                    <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d90226.7597116039!2d-99.21319064179689!3d19.489123899999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f93f77a56133%3A0x3f345b635e8f237f!2sMexicable+L%C3%ADnea+2!3m2!1d19.550163!2d-99.044122!4m5!1s0x85d1f8d415606b6b%3A0x5a8654457e562308!2sPor+Siempre+Vegana!3m2!1d19.41505!2d-99.16361!4m5!1s0x85d1fee868434283%3A0x4420894582f37c84!2sBazaar+S%C3%A1bado!3m2!1d19.345869!2d-99.194092!5e0!3m2!1sen!2sus!4v1657825000977!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 6 Activities"></iframe>
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Morning: Mexicable Ride</h4>
-                    <p>Head north to ride Mexicable Line 2. The whole family will love soaring above the colorful hillside murals. Hop off at La Cañada viewpoint for a playground break.</p>
-                    <img src="images/mexicable.jpg" alt="View from the Mexicable cable car over colorful houses on a hillside" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Lunch: Por Siempre Vegana</h4>
-                    <p>Time for some of the most famous vegan tacos in the city! Stop at the legendary Por Siempre Vegana taqueria in Roma Norte for an unforgettable lunch.</p>
-                    <img src="images/por-siempre-vegana.jpg" alt="A variety of delicious vegan tacos on a plate" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                </article>
-                 <article>
-                    <h4 class="font-bold text-xl mb-2">Afternoon: Bazaar Sábado in San Ángel</h4>
-                    <p>Browse the famous Bazaar Sábado arts-and-crafts market. A great chance for Marie to practice her Spanish with the friendly vendors while you shop for unique gifts.</p>
-                    <img src="images/bazaar-sabado.jpg" alt="Colorful crafts and textiles at an outdoor market" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                </article>
-            </div>
-        </section>
+            <!-- Day 3: Wednesday 13 Aug -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Wed 13 Aug – Hot-Air Balloon & First Ruins</h3>
+                <div class="space-y-6">
+                     <article>
+                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
+                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d120286.1720492862!2d-99.17411964179687!3d19.56066299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1eaf53b1b649d%3A0x1a45f2845318684!2sTeotihuac%C3%A1n!3m2!1d19.692459!2d-98.843603!4m5!1s0x85d1f8acb4831ceb%3A0x1a603ed75f463c6b!2sArena+M%C3%A9xico!3m2!1d19.425026!2d-99.152431!5e0!3m2!1sen!2sus!4v1657824483606!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 3 Activities"></iframe>
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">04:30 – 13:30: Teotihuacán from Above & Below</h4>
+                        <p>An early hotel pick-up for a breathtaking balloon flight over Teotihuacán at sunrise. After breakfast, walk the ancient Avenue of the Dead and tell Sorenne about the legends of the giant pyramids.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                             <img src="images/hot-air-balloons.jpg" alt="Hot air balloons flying over the Teotihuacan pyramids at sunrise" class="rounded-lg shadow-md h-72 w-full object-cover">
+                             <img src="images/teotihuacan-pyramid.jpg" alt="The Pyramid of the Sun at Teotihuacan" class="rounded-lg shadow-md h-72 w-full object-cover">
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Evening (Optional): Lucha Libre</h4>
+                        <p>Experience the spectacle of a Lucha Libre family show at Arena México. Sorenne will love the spooky masks and heroic wrestlers!</p>
+                        <img src="images/lucha-libre.jpg" alt="Lucha libre wrestlers in the ring" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
+                    </article>
+                </div>
+            </section>
+            
+            <!-- Day 4: Thursday 14 Aug -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Thu 14 Aug – Churros & Historic Center</h3>
+                <div class="space-y-6">
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
+                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d30103.01213943403!2d-99.1843196846924!3d19.43260778683226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f934527e79cb%3A0x69680a31604a37c1!2sZ%C3%B3calo!3m2!1d19.432608!2d-99.133208!5e0!3m2!1sen!2sus!4v1657824630591!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 4 Activities"></iframe>
+                        </div>
+                    </article>
+                     <article>
+                        <h4 class="font-bold text-xl mb-2">Morning: Churros Master Class</h4>
+                        <p>Time to make everyone's favorite treat! Learn how to make authentic churros from a Mexican pastry chef. Marie can help mix the dough! You can find more details and book here: <a href="https://www.tripadvisor.com/AttractionProductReview-g150800-d26868751-Churros_Master_Class_with_Mexican_Pastry_Chef-Mexico_City_Central_Mexico_and_Gulf_.html" target="_blank" class="text-teal-600 hover:underline">Churros Master Class</a>.</p>
+                        <div class="w-full aspect-video mt-4 rounded-lg shadow-md overflow-hidden">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/e1N386IyQpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Afternoon: Historic Center</h4>
+                        <p>After lunch, take a guided walk of the Zócalo and the Templo Mayor excavations. Tell Sorenne the spooky stories of the ancient Aztec temple that was discovered right in the middle of the city.</p>
+                        <img src="images/zocalo.jpg" alt="The Zocalo, Mexico City's main square, with the Metropolitan Cathedral" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
+                    </article>
+                </div>
+            </section>
 
-        <!-- Day 7: Sunday 17 Aug -->
-        <section class="mb-12">
-            <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Sun 17 Aug – Rock Climbing & City Views</h3>
-            <div class="space-y-6">
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                    <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d15052.88414434281!2d-99.1868345300903!3d19.42491189914755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sAdamanta+Escalada!3m2!1d19.415848!2d-99.17242!4m5!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sVeguisima!3m2!1d19.415848!2d-99.17242!5e0!3m2!1sen!2sus!4v1657825152865!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 7 Activities"></iframe>
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Afternoon: Rock Climbing for Linnea!</h4>
-                    <p>Time for an adventure just for Linnea! Head to Adamanta Climbing Gym in Condesa for some awesome rock climbing and bouldering that she'll love.</p>
-                    <img src="images/rock-climbing.jpg" alt="A person rock climbing indoors at a colorful climbing gym" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Dinner in Condesa</h4>
-                    <p>After climbing, enjoy a delicious and creative vegan dinner at Veguisima, a local favorite in Condesa, to celebrate the day's adventure.</p>
-                </article>
-            </div>
-        </section>
-        
-        <!-- Day 8: Monday 18 Aug -->
-        <section class="mb-12">
-            <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Mon 18 Aug – Souvenirs & Departure</h3>
-            <div class="space-y-6">
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                    <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d30103.85505085449!2d-99.1843196846924!3d19.42930278683226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f8ac0a4a5351%3A0x3c083439b233a726!2sMercado+de+Artesan%C3%ADas+La+Ciudadela!3m2!1d19.429303!2d-99.148316!5e0!3m2!1sen!2sus!4v1657825267425!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 8 Activities"></iframe>
-                    </div>
-                </article>
-                <article>
-                    <h4 class="font-bold text-xl mb-2">Morning: Last-Minute Souvenirs</h4>
-                    <p>A quick run to Mercado de Artesanías La Ciudadela to find a special souvenir for each of the girls to remember their amazing trip.</p>
-                    <img src="images/ciudadela-market.jpg" alt="Colorful skulls and crafts at Mercado de Artesanias La Ciudadela" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                </article>
-                 <article>
-                    <h4 class="font-bold text-xl mb-2">Departure</h4>
-                    <p>Transfer to the airport, a`llowing at least 1.5 hours for the journey on a weekday morning. ¡Buen viaje!</p>
-                </article>
-            </div>
-        </section>
+            <!-- Day 5: Friday 15 Aug -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Fri 15 Aug – Coyoacán's Art & Spooky Canals</h3>
+                <div class="space-y-6">
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
+                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d60241.00281226781!2d-99.19230564179687!3d19.3490059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1ff3761841369%3A0x33b327a13d523455!2sMuseo+Frida+Kahlo!3m2!1d19.355193!2d-99.162294!4m5!1s0x85ce012080415a77%3A0x44d1881775f08611!2sXochimilco!3m2!1d19.25508!2d-99.10228!5e0!3m2!1sen!2sus!4v1657824765481!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 5 Activities"></iframe>
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Morning: Frida Kahlo & Diego Rivera Museums</h4>
+                        <p>Visit the iconic Casa Azul where Frida Kahlo lived, then take a short taxi to the unique, pyramid-like Museo Diego Rivera-Anahuacalli.</p>
+                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <img src="images/casa-azul.jpg" alt="The bright blue exterior of the Frida Kahlo Museum (Casa Azul)" class="rounded-lg shadow-md h-72 w-full object-cover">
+                            <img src="images/anahuacalli-museum.jpg" alt="The imposing volcanic stone structure of the Museo Anahuacalli" class="rounded-lg shadow-md h-72 w-full object-cover">
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Afternoon: Xochimilco & The Island of the Dolls</h4>
+                        <p>Hire a colorful trajinera boat to float down the canals of Xochimilco. For Sorenne's love of spooky stories, ask the driver to take you past the eerie Island of the Dolls (Isla de las Muñecas)!</p>
+                        <img src="images/xochimilco-kayak.jpg" alt="Colorful trajinera boat on the canals of Xochimilco" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
+                    </article>
+                </div>
+            </section>
 
-        <!-- Extra Tips Section -->
-        <section class="bg-teal-50 p-6 rounded-lg">
-            <h3 class="text-2xl font-bold text-teal-800 mb-4">Extra Tips for a Smoother Week</h3>
-            <ul class="space-y-3 text-teal-900">
-                <li><strong>Altitude & Sun:</strong> CDMX sits at 7,300 ft; keep everyone hydrated and apply SPF 50 every morning.</li>
-                <li><strong>Transport:</strong> Install the Didi and Beat ride-hailing apps. For Marie, pack a fold-up Mifold or similar travel car seat.</li>
-                <li><strong>Cash:</strong> Markets and trajineras (Xochimilco boats) are often cash-only. ATMs are plentiful but withdraw mid-week to avoid weekend lines.</li>
-                <li><strong>Stroller Logistics:</strong> Sidewalks can be uneven; a rugged stroller is a good idea for Marie. Most Metro/BRT stations now have elevators.</li>
-                <li><strong>Safety After Dark:</strong> Stick to the well-lit, pedestrian-friendly cores of Condesa/Roma, Coyoacán, San Ángel, and the Zócalo in the evenings.</li>
-            </ul>
-        </section>
+            <!-- Day 6: Saturday 16 Aug -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Sat 16 Aug – Murals, Tacos & Markets</h3>
+                <div class="space-y-6">
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
+                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d90226.7597116039!2d-99.21319064179689!3d19.489123899999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f93f77a56133%3A0x3f345b635e8f237f!2sMexicable+L%C3%ADnea+2!3m2!1d19.550163!2d-99.044122!4m5!1s0x85d1f8d415606b6b%3A0x5a8654457e562308!2sPor+Siempre+Vegana!3m2!1d19.41505!2d-99.16361!4m5!1s0x85d1fee868434283%3A0x4420894582f37c84!2sBazaar+S%C3%A1bado!3m2!1d19.345869!2d-99.194092!5e0!3m2!1sen!2sus!4v1657825000977!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 6 Activities"></iframe>
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Morning: Mexicable Ride</h4>
+                        <p>Head north to ride Mexicable Line 2. The whole family will love soaring above the colorful hillside murals. Hop off at La Cañada viewpoint for a playground break.</p>
+                        <img src="images/mexicable.jpg" alt="View from the Mexicable cable car over colorful houses on a hillside" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Lunch: Por Siempre Vegana</h4>
+                        <p>Time for some of the most famous vegan tacos in the city! Stop at the legendary Por Siempre Vegana taqueria in Roma Norte for an unforgettable lunch.</p>
+                        <img src="images/por-siempre-vegana.jpg" alt="A variety of delicious vegan tacos on a plate" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
+                    </article>
+                     <article>
+                        <h4 class="font-bold text-xl mb-2">Afternoon: Bazaar Sábado in San Ángel</h4>
+                        <p>Browse the famous Bazaar Sábado arts-and-crafts market. A great chance for Marie to practice her Spanish with the friendly vendors while you shop for unique gifts.</p>
+                        <img src="images/bazaar-sabado.jpg" alt="Colorful crafts and textiles at an outdoor market" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
+                    </article>
+                </div>
+            </section>
 
-    </main>
+            <!-- Day 7: Sunday 17 Aug -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Sun 17 Aug – Rock Climbing & City Views</h3>
+                <div class="space-y-6">
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
+                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d15052.88414434281!2d-99.1868345300903!3d19.42491189914755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sAdamanta+Escalada!3m2!1d19.415848!2d-99.17242!4m5!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sVeguisima!3m2!1d19.415848!2d-99.17242!5e0!3m2!1sen!2sus!4v1657825152865!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 7 Activities"></iframe>
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Afternoon: Rock Climbing for Linnea!</h4>
+                        <p>Time for an adventure just for Linnea! Head to Adamanta Climbing Gym in Condesa for some awesome rock climbing and bouldering that she'll love.</p>
+                        <img src="images/rock-climbing.jpg" alt="A person rock climbing indoors at a colorful climbing gym" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Dinner in Condesa</h4>
+                        <p>After climbing, enjoy a delicious and creative vegan dinner at Veguisima, a local favorite in Condesa, to celebrate the day's adventure.</p>
+                    </article>
+                </div>
+            </section>
+            
+            <!-- Day 8: Monday 18 Aug -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Mon 18 Aug – Souvenirs & Departure</h3>
+                <div class="space-y-6">
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
+                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d30103.85505085449!2d-99.1843196846924!3d19.42930278683226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sCamino+Real+Polanco!3m2!1d19.428131!2d-99.182097!4m5!1s0x85d1f8ac0a4a5351%3A0x3c083439b233a726!2sMercado+de+Artesan%C3%ADas+La+Ciudadela!3m2!1d19.429303!2d-99.148316!5e0!3m2!1sen!2sus!4v1657825267425!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 8 Activities"></iframe>
+                        </div>
+                    </article>
+                    <article>
+                        <h4 class="font-bold text-xl mb-2">Morning: Last-Minute Souvenirs</h4>
+                        <p>A quick run to Mercado de Artesanías La Ciudadela to find a special souvenir for each of the girls to remember their amazing trip.</p>
+                        <img src="images/ciudadela-market.jpg" alt="Colorful skulls and crafts at Mercado de Artesanias La Ciudadela" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
+                    </article>
+                     <article>
+                        <h4 class="font-bold text-xl mb-2">Departure</h4>
+                        <p>Transfer to the airport, a`llowing at least 1.5 hours for the journey on a weekday morning. ¡Buen viaje!</p>
+                    </article>
+                </div>
+            </section>
 
-    <!-- Footer -->
-    <footer class="text-center p-6 bg-gray-200 mt-8">
-        <p class="text-gray-600">Enjoy an unforgettable week packed with pyramids, gondolas, kayaks, and tacos!</p>
-    </footer>
+            <!-- Extra Tips Section -->
+            <section class="bg-teal-50 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold text-teal-800 mb-4">Extra Tips for a Smoother Week</h3>
+                <ul class="space-y-3 text-teal-900">
+                    <li><strong>Altitude & Sun:</strong> CDMX sits at 7,300 ft; keep everyone hydrated and apply SPF 50 every morning.</li>
+                    <li><strong>Transport:</strong> Install the Didi and Beat ride-hailing apps. For Marie, pack a fold-up Mifold or similar travel car seat.</li>
+                    <li><strong>Cash:</strong> Markets and trajineras (Xochimilco boats) are often cash-only. ATMs are plentiful but withdraw mid-week to avoid weekend lines.</li>
+                    <li><strong>Stroller Logistics:</strong> Sidewalks can be uneven; a rugged stroller is a good idea for Marie. Most Metro/BRT stations now have elevators.</li>
+                    <li><strong>Safety After Dark:</strong> Stick to the well-lit, pedestrian-friendly cores of Condesa/Roma, Coyoacán, San Ángel, and the Zócalo in the evenings.</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center p-6 bg-gray-200 mt-8">
+            <p class="text-gray-600">Enjoy an unforgettable week packed with pyramids, gondolas, kayaks, and tacos!</p>
+        </footer>
+    </div>
+
+    <script>
+        // Get references to the DOM elements
+        const passwordOverlay = document.getElementById('password-overlay');
+        const siteContent = document.getElementById('site-content');
+        const passwordForm = document.getElementById('password-form');
+        const passwordInput = document.getElementById('password-input');
+        const errorMessage = document.getElementById('error-message');
+
+        // Listen for the form submission
+        passwordForm.addEventListener('submit', function(event) {
+            // Prevent the default form action
+            event.preventDefault();
+
+            // Check if the entered password is correct
+            if (passwordInput.value === 'TindellCDMX') {
+                // If correct, hide the overlay and show the site content
+                passwordOverlay.classList.add('hidden');
+                siteContent.classList.remove('hidden');
+            } else {
+                // If incorrect, show an error message and clear the input
+                errorMessage.textContent = 'Incorrect password. Please try again.';
+                passwordInput.value = '';
+                // Optional: Shake animation for the form
+                passwordOverlay.querySelector('div').classList.add('animate-shake');
+                setTimeout(() => {
+                    passwordOverlay.querySelector('div').classList.remove('animate-shake');
+                }, 500);
+            }
+        });
+
+        // Add a simple shake animation for incorrect password
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+                20%, 40%, 60%, 80% { transform: translateX(10px); }
+            }
+            .animate-shake {
+                animation: shake 0.5s ease-in-out;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 
 </body>
-</ht
+</html>
+
 
