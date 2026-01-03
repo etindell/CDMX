@@ -1,445 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mexico City Family Adventure</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-        }
-        .reminder {
-            background-color: #fffbeb;
-            border-left: 4px solid #facc15;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mexico City Family Adventure</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>body{font-family:Inter,sans-serif}h1,h2,h3{font-family:Playfair Display,serif}</style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+<div id="password-overlay" class="fixed inset-0 bg-gray-900 bg-opacity-95 flex items-center justify-center z-50">
+<div class="bg-white p-8 rounded-lg shadow-2xl text-center w-11/12 max-w-sm">
+<h3 class="text-2xl font-bold mb-4">Enter Password</h3>
+<form id="password-form">
+<input type="password" id="password-input" class="w-full px-4 py-2 border rounded-lg mb-4" placeholder="Password">
+<button type="submit" class="w-full bg-teal-600 text-white py-2 rounded-lg">Enter</button>
+</form>
+<p id="error-message" class="text-red-500 mt-4"></p>
+</div></div>
+<div id="site-content" class="hidden">
+<header class="bg-cover bg-center text-white shadow-lg" style="background-image:url(images/header-bg.jpg)">
+<div class="bg-black bg-opacity-50 p-8 md:p-16">
+<div class="max-w-4xl mx-auto text-center">
+<h1 class="text-4xl md:text-6xl font-bold mb-2">Linnea, Sorenne and Marie's</h1>
+<h2 class="text-5xl md:text-7xl font-bold">Mexico City Adventure</h2>
+<p class="mt-4 text-lg">Our Family Trip: Hot Air Balloons, Pyramids, Tacos and So Much Ice Cream!</p>
+</div></div></header>
+<main class="max-w-4xl mx-auto p-4 md:p-8">
 
-    <!-- Password Overlay -->
-    <div id="password-overlay" class="fixed inset-0 bg-gray-900 bg-opacity-95 flex items-center justify-center z-50">
-        <div class="bg-white p-8 rounded-lg shadow-2xl text-center w-11/12 max-w-sm">
-            <h3 class="text-2xl font-bold mb-4 text-gray-800">Enter Password</h3>
-            <p class="text-gray-600 mb-6">Please enter the password to view the itinerary.</p>
-            <form id="password-form">
-                <input type="password" id="password-input" class="w-full px-4 py-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Password">
-                <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded-lg hover:bg-teal-700 transition-colors">Enter</button>
-            </form>
-            <p id="error-message" class="text-red-500 mt-4 h-5"></p>
-        </div>
-    </div>
+<section class="mb-12"><h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Mon 11 Aug - Arrival</h3>
+<p>We arrived in Mexico City and made our way to our Airbnb in Condesa!</p></section>
 
-    <!-- Main Site Content (Initially Hidden) -->
-    <div id="site-content" class="hidden">
-        <!-- Header Section -->
-        <header class="bg-cover bg-center text-white shadow-lg" style="background-image: url('images/header-bg.jpg');">
-            <div class="bg-black bg-opacity-50 p-8 md:p-16">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-2">Linnea, Sorenne & Marie's</h1>
-                    <h2 class="text-5xl md:text-7xl font-bold">Mexico City Adventure</h2>
-                    <p class="mt-4 text-lg md:text-xl">A Family Itinerary: Pyramids, Spooky Dolls, Tacos & Rock Climbing!</p>
-                </div>
-            </div>
-        </header>
+<section class="mb-12"><h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Tue 12 Aug - Condesa Day</h3>
+<p class="mb-4">Avocado toast, churro-making class, street market, dinner at MeroToro.</p>
+<div class="grid grid-cols-2 gap-4">
+<img src="images/PXL_20250812_141045258.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250812_181721425.MP.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250812_193356199.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250813_004929737.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+</div></section>
 
-        <!-- Main Content -->
-        <main class="max-w-4xl mx-auto p-4 md:p-8">
+<section class="mb-12"><h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Wed 13 Aug - Hot Air Balloon and Pyramids</h3>
+<p class="mb-4">Hot air balloon over Teotihuacan, La Gruta cave restaurant, climbing pyramids.</p>
+<div class="grid grid-cols-2 gap-4">
+<img src="images/PXL_20250813_125830351.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250813_143202866.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250813_153127883.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250813_160156653.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250813_161228417.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250813_162803738.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+</div></section>
 
-            <!-- Day 1: Monday 11 Aug -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Mon 11 Aug – Late Night Arrival</h3>
-                <div class="space-y-6">
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">9:00 PM: Touchdown in CDMX!</h4>
-                        <p>Welcome to Mexico City! Tonight is all about getting from the airport to your <a href="https://www.airbnb.com/rooms/32550366" target="_blank" class="text-teal-600 hover:underline">Airbnb in Condesa</a> and settling in. Time to get a good night's sleep to start the adventure tomorrow.</p>
-                        <div class="reminder">
-                            <p class="font-semibold">Reminder:</p>
-                            <p>The Churro Making Class can be cancelled for a full refund before today, August 11th.</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
+<section class="mb-12"><h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Thu 14 Aug - Templo Mayor</h3>
+<p class="mb-4">Panaderia, Templo Mayor skull wall, Zocalo.</p>
+<div class="grid grid-cols-2 gap-4">
+<img src="images/PXL_20250814_155014008.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250814_172635481.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250814_175634052.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250814_193708007.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+</div></section>
 
-            <!-- Day 2: Tuesday 12 Aug -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Tue 12 Aug – A Condesa Family Day</h3>
-                <div class="space-y-6">
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.211191515488!2d-99.17459438469238!3d19.4158480368819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sC.+Pachuca+87%2C+Colonia+Condesa%2C+Cuauht%C3%A9moc%2C+06140+Ciudad+de+M%C3%A9xico%2C+CDMX%2C+Mexico!5e0!3m2!1sen!2sus!4v1657824630591!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 2 Activities"></iframe>
-                        </div>
-                    </article>
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Today's Summary</h4>
-                        <p class="text-gray-700">A relaxed day spent entirely in the beautiful Condesa neighborhood. The morning is a walking food tour with stops for coffee, fresh-baked conchas, and blue-corn tlacoyos, with a break at Parque México. The main event is the <strong>11:30 AM churro-making class</strong>, followed by an optional quick taco lunch. The afternoon is for napping and unstructured downtime before a delicious dinner at <strong>MeroToro</strong> at 6:00 PM.</p>
-                    </article>
-                    <article>
-                        <details class="bg-gray-100 p-4 rounded-lg cursor-pointer">
-                            <summary class="font-semibold text-lg text-teal-800">View Detailed Timings & Tips</summary>
-                            <div class="mt-4 space-y-4 text-gray-700">
-                                <p><strong>7:00 AM:</strong> Leave the Airbnb for an easy stroller walk.</p>
-                                <p><strong>7:10 - 7:30 AM:</strong> Coffee at <strong>Mary la Reina de Abejas</strong> (Parque España kiosk).</p>
-                                <p><strong>7:50 - 8:20 AM:</strong> Fresh-baked conchas at <strong>Santas Conchas</strong> right when they open.</p>
-                                <p><strong>8:25 - 8:45 AM:</strong> Blue-corn tlacoyos at <strong>Tlacoyos Katy</strong>.</p>
-                                <p><strong>8:50 - 9:40 AM:</strong> Playground and duck pond break at <strong>Parque México</strong>.</p>
-                                <p><strong>9:40 - 10:30 AM:</strong> Shaded, stroller-friendly stroll up Ámsterdam and Veracruz.</p>
-                                <p><strong>11:30 AM - 1:30 PM:</strong> <strong>Churros-making class</strong> at Aura Cocina Mexicana.</p>
-                                <p><strong>1:30 - 1:45 PM:</strong> Grab optional to-go tacos from <strong>Taquería Orinoco</strong> if the kids need a bigger lunch.</p>
-                                <p><strong>2:05 - 3:30 PM:</strong> Nap and quiet time back at the Airbnb.</p>
-                                <p><strong>3:30 - 5:45 PM:</strong> Unstructured downtime: revisit a park, grab paletas at Helados Cometa, or browse a bookshop.</p>
-                                <p><strong>6:00 PM:</strong> Dinner reservation at <strong>MeroToro</strong>.</p>
-                            </div>
-                        </details>
-                    </article>
-                    <div class="reminder">
-                        <p class="font-semibold">Reminder:</p>
-                        <p>The Hot Air Balloon tour must be cancelled by today, August 12th, for a full refund.</p>
-                    </div>
-                </div>
-            </section>
+<section class="mb-12"><h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Fri 15 Aug - Casa Azul and Coyoacan</h3>
+<p class="mb-4">Casa Azul (Frida Kahlo), ice cream in Coyoacan, coyote fountain.</p>
+<div class="grid grid-cols-2 gap-4">
+<img src="images/PXL_20250815_162826358.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250815_172729094.MP.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+</div>
+<img src="images/PXL_20250815_182741924.jpg" class="rounded-lg shadow-md w-full h-64 object-cover mt-4">
+</section>
 
-            <!-- Day 3: Wednesday 13 Aug -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Wed 13 Aug – Sunrise Balloon & Taco Fiesta</h3>
-                <div class="space-y-6">
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d120286.1720492862!2d-99.17411964179687!3d19.56066299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sPachuca+87%2C+Condesa!3m2!1d19.415848!2d-99.17242!4m5!1s0x85d1eaf53b1b649d%3A0x1a45f2845318684!2sTeotihuac%C3%A1n!3m2!1d19.692459!2d-98.843603!5e0!3m2!1sen!2sus!4v1657824483606!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 3 Activities"></iframe>
-                        </div>
-                    </article>
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Today's Summary</h4>
-                        <p class="text-gray-700">An epic day that starts before dawn! After a <strong>4:20 AM van pick-up</strong>, you'll experience a magical sunrise hot-air balloon flight over the Teotihuacán pyramids, followed by breakfast in a cave restaurant and time to explore the ruins. After a long afternoon siesta, you have two choices for the evening: explore the Aztec history at the <strong>Templo Mayor</strong> or go on a food safari at the exotic <strong>Mercado de San Juan</strong>. The day ends with a legendary taco-crawl through the Historic Center.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                             <div class="w-full aspect-video rounded-lg shadow-md overflow-hidden">
-                                <iframe class="w-full h-full" src="https://www.youtube.com/embed/NM5XktNXx_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            </div>
-                             <img src="images/teotihuacan-pyramid.jpg" alt="The Pyramid of the Sun at Teotihuacan" class="rounded-lg shadow-md h-full w-full object-cover">
-                        </div>
-                    </article>
-                    <article>
-                        <details class="bg-gray-100 p-4 rounded-lg cursor-pointer">
-                            <summary class="font-semibold text-lg text-teal-800">View Detailed Morning & Afternoon Plan</summary>
-                            <div class="mt-4 space-y-4 text-gray-700">
-                                <p><strong>3:45 AM:</strong> Wake-up & light breakfast at the Airbnb. Dress in layers!</p>
-                                <p><strong>4:20 - 4:50 AM:</strong> Van pick-up at 87 Calle Pachuca.</p>
-                                <p><strong>7:00 - 8:00 AM:</strong> Shared hot-air-balloon flight over the pyramids.</p>
-                                <p><strong>8:30 - 9:30 AM:</strong> Breakfast at the unique La Gruta (cave restaurant).</p>
-                                <p><strong>9:30 - 11:30 AM:</strong> Explore the Teotihuacán archaeological site.</p>
-                                <p><strong>1:00 - 3:30 PM:</strong> Siesta and light lunch back in Condesa.</p>
-                                <p><strong>3:30 PM onwards:</strong> Choose your afternoon adventure! Either head to the Zócalo to see the Templo Mayor Museum or go to the Mercado de San Juan for a food safari.</p>
-                            </div>
-                        </details>
-                    </article>
-                    <article>
-                        <details class="bg-gray-100 p-4 rounded-lg cursor-pointer">
-                            <summary class="font-semibold text-lg text-teal-800">View Taco-Crawl Dinner Plan</summary>
-                            <div class="mt-4 space-y-4 text-gray-700">
-                                <p><strong>Stop 1:</strong> Tacos de Canasta Los Especiales (closes 5 PM) for quick, cheap basket tacos.</p>
-                                <p><strong>Stop 2:</strong> Ricos Tacos Toluca (closes ~6 PM) for Michelin-listed green chorizo.</p>
-                                <p><strong>Stop 3:</strong> El Huequito for iconic al pastor tacos.</p>
-                                <p><strong>Stop 4:</strong> Taquería Los Cocuyos for the legendary "meat jacuzzi" experience (and a lime soda!).</p>
-                                <p><strong>Tip:</strong> Order 1-2 tacos at each spot (cash only!) and enjoy the walk between them. You should be done by 7:30 PM.</p>
-                            </div>
-                        </details>
-                    </article>
-                    <article>
-                        <details class="bg-gray-100 p-4 rounded-lg cursor-pointer">
-                            <summary class="font-semibold text-lg text-teal-800">View Practical Snapshot</summary>
-                            <div class="mt-4 space-y-2 text-gray-700">
-                                <p><strong>Balloon Costs:</strong> MX $3,450 pp total (bring MX $2,500 pp in cash for the balance).</p>
-                                <p><strong>Templo Mayor Fee:</strong> MX $100 for adults, under-13 free.</p>
-                                <p><strong>Transport:</strong> Budget ~MX $120 per XL Uber for trips between Condesa and Centro.</p>
-                                <p><strong>Weather:</strong> Pack rain jackets for likely afternoon showers.</p>
-                                <p><strong>Stroller:</strong> A compact stroller or carrier is best for crowded markets and taco stalls.</p>
-                            </div>
-                        </details>
-                    </article>
-                </div>
-            </section>
-            
-            <!-- Day 4: Thursday 14 Aug -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Thu 14 Aug – Anthropology & Chapultepec</h3>
-                <div class="space-y-6">
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d15052.98393354366!2d-99.1947936300903!3d19.42498889914755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sPachuca+87%2C+Condesa!3m2!1d19.415848!2d-99.17242!4m5!1s0x85d1f8d2b784f47b%3A0x73f7d853137373e7!2sMuseo+Nacional+de+Antropolog%C3%ADa!3m2!1d19.425986!2d-99.18633!4m5!1s0x85d1f8d4e4a5381b%3A0x29a433d55827ad4a!2sLardo!3m2!1d19.4157!2d-99.172!5e0!3m2!1sen!2sus!4v1657824333303!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 4 Activities"></iframe>
-                        </div>
-                    </article>
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Today's Summary</h4>
-                        <p class="text-gray-700">A perfect museum day. Start with a <strong>7:00 AM breakfast walking tour</strong> through Condesa, sampling specialty coffee, fresh pastries, and a legendary chilaquil torta. You'll arrive at the <strong>Museo Nacional de Antropología</strong> right as it opens at 9:00 AM. After exploring the museum, enjoy a relaxing afternoon in Chapultepec Park before heading to your <strong>7:00 PM dinner reservation at Lardo</strong>.</p>
-                    </article>
-                    <article>
-                        <details class="bg-gray-100 p-4 rounded-lg cursor-pointer">
-                            <summary class="font-semibold text-lg text-teal-800">View Detailed Breakfast Walk</summary>
-                            <div class="mt-4 space-y-4 text-gray-700">
-                                <p><strong>7:00 AM:</strong> Leave Airbnb for a 10-min walk to your first stop.</p>
-                                <p><strong>7:10 AM:</strong> Specialty coffee at <strong>Blend Station</strong>.</p>
-                                <p><strong>7:32 AM:</strong> Fresh, steaming pastries at <strong>Panadería Saint</strong>.</p>
-                                <p><strong>7:50 AM:</strong> Split a legendary <strong>torta de chilaquil</strong> from the famous street stall.</p>
-                                <p><strong>8:10 AM:</strong> A 30-minute walk through the neighborhood and into Chapultepec Park, arriving at the museum just before it opens.</p>
-                            </div>
-                        </details>
-                    </article>
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Morning & Afternoon: Anthropology & Park Play</h4>
-                        <p>After your breakfast tour, spend the morning at the world-famous Museo Nacional de Antropología. Sorenne will love the giant, mysterious stone carvings! After the museum, enjoy a casual lunch and a relaxing afternoon in Chapultepec Park. If the weather is clear, enjoy a walk and maybe a row-boat rental for Linnea on the lake.</p>
-                        <div class="w-full aspect-video mt-4 rounded-lg shadow-md overflow-hidden">
-                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/vg65j8d1Zzw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    </article>
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Dinner Reservation: Lardo</h4>
-                        <p><strong>Time:</strong> 7:00 PM<br><strong>Confirmation #:</strong> 335616<br>A trendy and delicious spot from renowned chef Elena Reygadas, focusing on Mexican-European fusion. It's designed for sharing and has a lively, beautiful atmosphere. <a href="https://www.lardo.com.mx/menu.html" target="_blank" class="text-teal-600 hover:underline">View Menu</a></p>
-                    </article>
-                </div>
-            </section>
+<section class="mb-12"><h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Sat 16 Aug - Xochimilco and Anthropology Museum</h3>
+<p class="mb-4">Xochimilco flower crowns, Anthropology Museum, ice cream.</p>
+<div class="grid grid-cols-2 gap-4">
+<img src="images/PXL_20250816_175814403.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250816_225209304.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+</div>
+<img src="images/PXL_20250817_001531111.jpg" class="rounded-lg shadow-md w-full h-64 object-cover mt-4">
+</section>
 
-            <!-- Day 5: Friday 15 Aug -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Fri 15 Aug – Coyoacán Art & Xochimilco Canals</h3>
-                <div class="space-y-6">
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d60241.00281226781!2d-99.19230564179687!3d19.3490059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sPachuca+87%2C+Condesa!3m2!1d19.415848!2d-99.17242!4m5!1s0x85d1ff3761841369%3A0x33b327a13d523455!2sMuseo+Frida+Kahlo!3m2!1d19.355193!2d-99.162294!4m5!1s0x85ce004381285095%3A0xba925333f2a89a83!2sEmbarcadero+Las+Flores+Nativitas!3m2!1d19.260833!2d-99.100278!5e0!3m2!1sen!2sus!4v1657824765481!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 5 Activities"></iframe>
-                        </div>
-                    </article>
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Today's Summary</h4>
-                        <p class="text-gray-700">A day of art and canals in the south of the city. Start with an early breakfast at the bustling <strong>Mercado de Coyoacán</strong>. The main event is your <strong>10:15 AM timed entry (Order #2366247)</strong> to the Frida Kahlo Museum, followed by your <strong>12:30 PM lunch reservation at Los Danzantes</strong>. Afterwards, visit the impressive <strong>Anahuacalli Museum</strong> before heading to Xochimilco for a 2-hour <strong>trajinera boat cruise</strong> through the floating gardens.</p>
-                    </article>
-                    <article>
-                        <details class="bg-gray-100 p-4 rounded-lg cursor-pointer">
-                            <summary class="font-semibold text-lg text-teal-800">View Detailed Timings & Tips</summary>
-                            <div class="mt-4 space-y-4 text-gray-700">
-                                <p><strong>7:15 AM:</strong> Call an Uber/Didi for the ~30 min ride to Coyoacán.</p>
-                                <p><strong>7:45 - 9:15 AM:</strong> Explore and have breakfast at <strong>Mercado de Coyoacán</strong>. Try tamales, fresh juice, and coffee from Café El Jarocho nearby.</p>
-                                <p><strong>9:30 AM:</strong> Walk 5 minutes to the Frida Kahlo Museum and get in the ticket-holders' line by 9:45 AM.</p>
-                                <p><strong>10:15 - 11:45 AM:</strong> Explore the <strong>Casa Azul</strong>. Use a baby carrier for the upstairs rooms.</p>
-                                <p><strong>12:00 - 1:15 PM:</strong> Lunch at <strong>Los Danzantes (Confirmation #428493)</strong>. Your reservation is for 12:30 PM. This modern Oaxacan spot has a dedicated vegan menu. <a href="https://losdanzantesoaxaca.com.mx/eng-menu-food/" target="_blank" class="text-teal-600 hover:underline">View Menu</a></p>
-                                <p><strong>1:30 - 3:00 PM:</strong> Explore the <strong>Anahuacalli Museum</strong> (your Casa Azul ticket grants free entry).</p>
-                                <p><strong>3:30 - 5:30 PM:</strong> 2-hour private <strong>trajinera cruise</strong> from Embarcadero Nuevo Nativitas.</p>
-                                <p><strong>5:30 PM onwards:</strong> Head back to Condesa; traffic should be lighter after 6:00 PM.</p>
-                            </div>
-                        </details>
-                    </article>
-                    <article>
-                        <details class="bg-gray-100 p-4 rounded-lg cursor-pointer">
-                            <summary class="font-semibold text-lg text-teal-800">View Practical Notes</summary>
-                            <div class="mt-4 space-y-2 text-gray-700">
-                                <ul class="list-disc list-inside ml-4">
-                                    <li><strong>Tickets:</strong> Reserve Casa Azul tickets online at least 2 weeks ahead.</li>
-                                    <li><strong>Strollers:</strong> A compact stroller or baby carrier is recommended for Casa Azul's second floor and the market.</li>
-                                    <li><strong>Transport:</strong> Didi often works better than Uber in the south of the city.</li>
-                                    <li><strong>Weather:</strong> Pack light ponchos for potential afternoon rain.</li>
-                                </ul>
-                            </div>
-                        </details>
-                    </article>
-                </div>
-            </section>
+<section class="mb-12"><h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Sun 17 Aug - Sunday Funday</h3>
+<p class="mb-4">Street barbacoa tacos, Panaderia Rosetta, watching Muevete en Bici.</p>
+<div class="grid grid-cols-2 gap-4">
+<img src="images/PXL_20250817_152420662.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+<img src="images/PXL_20250817_182004979.jpg" class="rounded-lg shadow-md w-full h-64 object-cover">
+</div></section>
 
-            <!-- Day 6: Saturday 16 Aug -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Sat 16 Aug – Grutas de Tolantongo Day Trip</h3>
-                <div class="space-y-6">
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Daily Map (Meeting Point)</h4>
-                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d15052.26193354366!2d-99.17460868469238!3d19.42498889914755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sPachuca+87%2C+Condesa!3m2!1d19.415848!2d-99.17242!4m5!1s0x85d1f8d2b784f47b%3A0x73f7d853137373e7!2sAngel+of+Independence!3m2!1d19.427025!2d-99.167702!5e0!3m2!1sen!2sus!4v1657824333303!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 6 Activities"></iframe>
-                        </div>
-                    </article>
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Today's Summary</h4>
-                        <p class="text-gray-700">A long but unforgettable day trip to the stunning thermal hot springs of Tolantongo. The day starts very early with a <strong>5:45 AM meeting time</strong> at the Angel of Independence monument. The tour includes breakfast, all your gear for the day, and plenty of time to soak in the cliffside infinity pools (pocitos), explore the warm caves and waterfalls, and relax by the turquoise river. You'll return to the city around 8:00 PM.</p>
-                        <img src="https://placehold.co/600x400/83C5BE/006D77?text=Grutas+de+Tolantongo" alt="Placeholder image of turquoise water pools on a cliffside" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                    </article>
-                    <article>
-                        <details class="bg-gray-100 p-4 rounded-lg cursor-pointer">
-                            <summary class="font-semibold text-lg text-teal-800">View Detailed Itinerary</summary>
-                            <div class="mt-4 space-y-4 text-gray-700">
-                                <p><strong>5:45 AM:</strong> Meet your tour group at the Angel of Independence monument.</p>
-                                <p><strong>Morning:</strong> Depart for a 90-minute drive to Actopan for an included breakfast.</p>
-                                <p><strong>Late Morning:</strong> Arrive at Tolantongo. You'll be provided with a backpack, towels, phone protector, water, headlamp, and snacks.</p>
-                                <p><strong>Activity 1:</strong> Soak in the "pocitos," the naturally warm thermal pools carved into the stunning canyon cliffs.</p>
-                                <p><strong>Activity 2:</strong> Spend about two hours exploring the incredible warm-water caves and waterfalls.</p>
-                                <p><strong>Lunch:</strong> Enjoy a relaxing meal (not included) and swim by the beautiful turquoise river.</p>
-                                <p><strong>~8:00 PM:</strong> Arrive back in Mexico City.</p>
-                            </div>
-                        </details>
-                    </article>
-                </div>
-            </section>
+<section class="mb-12"><h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Mon 18 Aug - Heading Home</h3>
+<p>An incredible week of balloons, pyramids, tacos, and ice cream!</p></section>
 
-            <!-- Day 7: Sunday 17 Aug -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Sun 17 Aug – Biking Reforma & Climbing</h3>
-                <div class="space-y-6">
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d15052.88414434281!2d-99.1868345300903!3d19.42491189914755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e0!4m5!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sPachuca+87%2C+Condesa!3m2!1d19.415848!2d-99.17242!4m5!1s0x85d1f8d415606b6b%3A0x5a8654457e562308!2sPanader%C3%ADa+Rosetta%2C+Colima!3m2!1d19.4181!2d-99.1622!4m5!1s0x85d1f8d415606b6b%3A0x5a8654457e562308!2sGlorieta+de+la+Diana+Cazadora!3m2!1d19.4252!2d-99.1738!4m5!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sAdamanta+Del+Valle!3m2!1d19.3905!2d-99.1664!5e0!3m2!1sen!2sus!4v1657825152865!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 7 Activities"></iframe>
-                        </div>
-                    </article>
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Today's Summary</h4>
-                        <p class="text-gray-700">An action-packed Sunday! Start with an early breakfast at the famous <strong>Panadería Rosetta</strong> (7:30 AM), then join the city-wide <strong>"Muévete en Bici"</strong> event at 8:00 AM for a bike ride up the car-free Paseo de la Reforma. Join a free yoga class at 9:30 AM, followed by lunch with Rodrigo (location TBD). After a well-deserved afternoon siesta, Linnea gets her climbing adventure in the evening at <strong>Adamanta</strong>.</p>
-                    </article>
-                    <article>
-                        <details class="bg-gray-100 p-4 rounded-lg cursor-pointer">
-                            <summary class="font-semibold text-lg text-teal-800">View Detailed Timings & Tips</summary>
-                            <div class="mt-4 space-y-4 text-gray-700">
-                                <p><strong>7:30 AM:</strong> Be first in line at <strong>Panadería Rosetta</strong> for their famous guava-cheese rol.</p>
-                                <p><strong>~7:45 AM:</strong> Pick up pre-booked bikes from Poray or use the ECOBICI system.</p>
-                                <p><strong>8:00 AM - 9:15 AM:</strong> Enjoy a relaxed ride along the tree-lined, car-free streets, heading towards Paseo de la Reforma.</p>
-                                <p><strong>9:30 AM - 10:30 AM:</strong> Join the free, family-friendly outdoor yoga class near the Diana Cazadora fountain.</p>
-                                <p><strong>10:45 AM - 12:30 PM:</strong> Lunch with Rodrigo (Location TBD).</p>
-                                <p><strong>1:00 PM - 3:30 PM:</strong> Head back to the Airbnb for siesta and quiet time.</p>
-                                <p><strong>4:10 PM - 6:30 PM:</strong> Head to <strong>Adamanta Del Valle</strong> for Linnea's climbing session. The gym has a great bouldering area and a padded zone for the little ones.</p>
-                                <p><strong>7:00 PM onwards:</strong> Optional relaxed dinner back in Condesa or order takeaway to wind down.</p>
-                            </div>
-                        </details>
-                    </article>
-                    <article>
-                        <details class="bg-gray-100 p-4 rounded-lg cursor-pointer">
-                            <summary class="font-semibold text-lg text-teal-800">View Sunday Checklist</summary>
-                            <div class="mt-4 space-y-2 text-gray-700">
-                                <p><strong>Saturday Evening Prep:</strong></p>
-                                <ul class="list-disc list-inside ml-4">
-                                    <li>Register for ECOBICI (5-min online) or confirm Poray bike delivery.</li>
-                                    <li>Reserve Adamanta day-passes online to skip waiver lines.</li>
-                                </ul>
-                                <p><strong>What to Bring:</strong></p>
-                                <ul class="list-disc list-inside ml-4">
-                                    <li>Sunscreen and light jackets.</li>
-                                    <li>Reusable water bottles.</li>
-                                    <li>Yoga mat or towel.</li>
-                                    <li>Socks for climbing shoes.</li>
-                                    <li>Small bills for snacks.</li>
-                                </ul>
-                            </div>
-                        </details>
-                    </article>
-                </div>
-            </section>
-            
-            <!-- Day 8: Monday 18 Aug -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-teal-700 border-b-2 border-teal-200 pb-2 mb-6">Mon 18 Aug – Souvenirs & Departure</h3>
-                <div class="space-y-6">
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Daily Map</h4>
-                        <div class="mt-4 rounded-lg shadow-md overflow-hidden">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d30103.85505085449!2d-99.1843196846924!3d19.42930278683226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x85d1f8d3d95c52c7%3A0xf639a5843c08920!2sPachuca+87%2C+Condesa!3m2!1d19.415848!2d-99.17242!4m5!1s0x85d1f8ac0a4a5351%3A0x3c083439b233a726!2sMercado+de+Artesan%C3%ADas+La+Ciudadela!3m2!1d19.429303!2d-99.148316!5e0!3m2!1sen!2sus!4v1657825267425!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Day 8 Activities"></iframe>
-                        </div>
-                    </article>
-                    <article>
-                        <h4 class="font-bold text-xl mb-2">Morning: Last-Minute Souvenirs</h4>
-                        <p>A quick run to Mercado de Artesanías La Ciudadela to find a special souvenir for each of the girls to remember their amazing trip. It opens at 10 am.</p>
-                        <img src="images/ciudadela-market.jpg" alt="Colorful skulls and crafts at Mercado de Artesanias La Ciudadela" class="mt-4 rounded-lg shadow-md w-full h-64 object-cover">
-                    </article>
-                     <article>
-                        <h4 class="font-bold text-xl mb-2">Departure</h4>
-                        <p>Transfer to the airport. <strong>Important:</strong> Allow at least <strong>3 hours</strong> to get to the airport on a weekday morning, as traffic can be very heavy.</p>
-                    </article>
-                </div>
-            </section>
+<section class="mb-12 bg-teal-50 p-6 rounded-lg"><h3 class="text-2xl font-bold text-teal-800 mb-4">Trip Highlights</h3>
+<ul class="list-disc list-inside">
+<li>Hot Air Balloon over Teotihuacan</li>
+<li>La Gruta cave restaurant</li>
+<li>Churro-making class</li>
+<li>Casa Azul</li>
+<li>So many tacos!</li>
+<li>Ice cream every day</li>
+</ul></section>
 
-            <!-- Pre-Booking Checklist -->
-            <section class="mb-12 bg-teal-50 p-6 rounded-lg">
-                <h3 class="text-2xl font-bold text-teal-800 mb-4">Quick Wins: Pre-Booking Checklist</h3>
-                <ul class="space-y-3 text-teal-900 list-disc list-inside">
-                    <li><strong>Frida Kahlo Museum:</strong> Book tickets online 3-6 weeks in advance. They sell out!</li>
-                    <li><strong>Teotihuacán Balloon Tour:</strong> Book with an operator that includes the on-site walking tour to simplify the day.</li>
-                    <li><strong>National Museum of Anthropology:</strong> Buy tickets online to skip the line.</li>
-                    <li><strong>Airport Transport:</strong> Pre-book a large vehicle with a car seat, or be ready to use DiDi Protect.</li>
-                    <li><strong>Dinner Reservations:</strong> For popular spots, book for 6:00-6:30 pm to avoid long waits.</li>
-                </ul>
-            </section>
-
-            <!-- Extra Tips Section -->
-            <section class="bg-gray-100 p-6 rounded-lg">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">Extra Tips for a Smoother Week</h3>
-                <ul class="space-y-3 text-gray-700 list-disc list-inside">
-                    <li><strong>Altitude & Sun:</strong> CDMX is at 7,350 ft (2,240m). Take it easy the first day, keep everyone hydrated (carry electrolyte packets), and apply SPF 50 every morning.</li>
-                    <li><strong>Rainy Season:</strong> August is the wettest month. Plan outdoor activities for the morning and keep indoor options (museums, cafes) for the afternoon when showers are common (3-5 pm).</li>
-                    <li><strong>Mosquitoes:</strong> Pack and use a spray with 30% DEET, especially for time near the water in Chapultepec and Xochimilco.</li>
-                    <li><strong>Kid-Friendly Food:</strong> To balance the delicious vegan meals, consider omnivore-friendly spots like El Califa or the stands in Mercado Roma for classic quesadillas or tacos al pastor.</li>
-                    <li><strong>Transport:</strong> Install the Didi and Beat ride-hailing apps. For Marie, pack a fold-up Mifold or similar travel car seat as they are not always available.</li>
-                </ul>
-            </section>
-
-        </main>
-
-        <!-- Footer -->
-        <footer class="text-center p-6 bg-gray-200 mt-8">
-            <p class="text-gray-600">Enjoy an unforgettable week packed with pyramids, gondolas, kayaks, and tacos!</p>
-        </footer>
-    </div>
-
-    <script>
-        // Get references to the DOM elements
-        const passwordOverlay = document.getElementById('password-overlay');
-        const siteContent = document.getElementById('site-content');
-        const passwordForm = document.getElementById('password-form');
-        const passwordInput = document.getElementById('password-input');
-        const errorMessage = document.getElementById('error-message');
-
-        // Listen for the form submission
-        passwordForm.addEventListener('submit', function(event) {
-            // Prevent the default form action
-            event.preventDefault();
-
-            // Check if the entered password is correct
-            if (passwordInput.value === 'TindellCDMX') {
-                // If correct, hide the overlay and show the site content
-                passwordOverlay.classList.add('hidden');
-                siteContent.classList.remove('hidden');
-            } else {
-                // If incorrect, show an error message and clear the input
-                errorMessage.textContent = 'Incorrect password. Please try again.';
-                passwordInput.value = '';
-                // Optional: Shake animation for the form
-                passwordOverlay.querySelector('div').classList.add('animate-shake');
-                setTimeout(() => {
-                    passwordOverlay.querySelector('div').classList.remove('animate-shake');
-                }, 500);
-            }
-        });
-
-        // Add a simple shake animation for incorrect password
-        const style = document.createElement('style');
-        style.innerHTML = `
-            @keyframes shake {
-                0%, 100% { transform: translateX(0); }
-                10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
-                20%, 40%, 60%, 80% { transform: translateX(10px); }
-            }
-            .animate-shake {
-                animation: shake 0.5s ease-in-out;
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-
-</body>
-</html>
-
-
-
+</main>
+<footer class="text-center p-6 bg-gray-200"><p>An unforgettable family adventure!</p></footer>
+</div>
+<script>
+document.getElementById('password-form').addEventListener('submit',function(e){
+e.preventDefault();
+if(document.getElementById('password-input').value==='TindellCDMX'){
+document.getElementById('password-overlay').classList.add('hidden');
+document.getElementById('site-content').classList.remove('hidden');
+}else{document.getElementById('error-message').textContent='Incorrect password';}
+});
+</script>
+</body></html>
